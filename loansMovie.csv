@@ -1,0 +1,4 @@
+idClient,firstName,lastName,birthDate,address,contact,dayLoan,monthLoan,yearLoan,idMovie,shelf,available,title,dayRelease,monthRelease,yearRelease,genre,rating3,Miruna,Cojocaru,27.11.1998,Roman-Romania,Mirunacojocaru@gmail.com,30,5,2019,6,6,TRUE,Green Mile,3,6,1997,drama,8.6
+5,2,2,2,2,2,2,2,1990,7,2,TRUE,2,0,0,0,2,2
+4,roxana,chicarosa,15.08.1996,dudului nr 60,roxanachicarosa@yahoo.com,1,5,2019,5,6,true,Orange is the new black,0,0,0,crime,8.1
+6,1,1,1,1,1,2,2,2010,7,2,true,2,0,0,0,2,2.0
