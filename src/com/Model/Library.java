@@ -2,10 +2,7 @@ package com.Model;
 
 import Persons.Client;
 import Persons.Employee;
-import Services.DatabaseConnection;
-import Services.InputFiles;
-import Services.ReadLibraryFromDatabase;
-import Services.UpdateDatabase;
+import Services.*;
 import com.mysql.jdbc.util.Base64Decoder;
 
 import javax.xml.crypto.Data;
@@ -70,7 +67,8 @@ public class Library {
     }
 
     public void addBook(Book b) {
-        books.add(b);
+        String s = "Add book";
+        Command.addToFile(s);books.add(b);
     }
 
     public void addBook() {
@@ -82,7 +80,9 @@ public class Library {
 
     }
 
-    public void addMovie(Movie m) { movies.add(m);}
+    public void addMovie(Movie m) {
+        String s = "Add movie";
+        Command.addToFile(s); movies.add(m);}
 
     public void addMovie() {
         Movie m = new Movie();
@@ -159,6 +159,7 @@ public class Library {
             System.out.println("");
         }
     }
+
     public void printLoans() {
         System.out.println("All of our loans are: ");
         for (Loan l : loans){
@@ -335,8 +336,11 @@ public class Library {
     }
 
     public void addL(Loan l) {
+        String s = "Add loan";
+        Command.addToFile(s);
         loans.add(l);
     }
+
     public int findIndexO(ObjectLoaned o) {
         if (o.getClass().getName() == "com.com.Model.Book") {
             for (int i = 0; i < books.size(); i++)
@@ -367,21 +371,25 @@ public class Library {
     }
 
     public void addEmployee(Employee e) {
-
+        String s = "Add employee";
+        Command.addToFile(s);
         employees.add(e);
     }
+
     public void addClient(){
         Client c = new Client();
         c.readData();
         c.addToFile(inputFiles.getClientFile());
         clients.add(c);
     }
+
     public void addEmployee() {
         Employee e = new Employee();
         e.readData();
         e.addToFile(inputFiles.getEmployeeFile());
         employees.add(e);
     }
+
     public boolean findBook(String title, String author) {
         for ( int i = 0; i < books.size(); i++) {
             if (books.get(i).getTitle().equals(title) && books.get(i).getAuthor().equals(author) )
@@ -410,9 +418,13 @@ public class Library {
                 return i;
         return -1;
     }
+
     public Book returnBook(int i) {return books.get(i);}
+
     public Movie returnMovie (int i) {return movies.get(i);}
+
     public Client returnClient (int i) {return clients.get(i);}
+
     public int getBookIndex(int index) {
         for (int i = 0; i < books.size(); i++)
             if (books.get(i).getID() == index)
@@ -427,19 +439,17 @@ public class Library {
         return -1;
     }
 
+    public ArrayList<Client> getClients() {return clients;}
+
     public int getClientIndex(int index) {
         for ( int i = 0; i < clients.size(); i++)
             if (clients.get(i).getID() == index)
                 return i;
         return -1;
     }
+
     public void updateObjects() throws SQLException {
         int idx;
-//        for (int i = 0; i < loans.size(); i++) {
-//            idx = getBookIndex(loans.get(i).getBookTitle(), loans.get(i).getBookAuthor());
-//            if (idx == 0) loans.remove(i);
-//            else books.get(i).setAvailable(false);
-//        }
 
         for (int i = 0; i < loans.size(); i++) {
             if (loans.get(i).getObject().getClass().getName() == "com.Model.Book") {
@@ -515,6 +525,7 @@ public class Library {
         }
 
     }
+
     public void readMoviesFromFile(String fileName) {
         File log = new File(fileName);
         try {
@@ -530,6 +541,7 @@ public class Library {
             e.printStackTrace();
         }
     }
+
     public void readClientsFromFile(String fileName) {
         File log = new File(fileName);
         try {
@@ -545,6 +557,7 @@ public class Library {
             e.printStackTrace();
         }
     }
+
     public void readLoansFromFile(String fileName1, String fileName2) {
         File log = new File(fileName1);
         try {
@@ -575,6 +588,7 @@ public class Library {
             e.printStackTrace();
         }
     }
+
     public void readEmployeesFromFile(String fileName) {
         File log = new File(fileName);
         try {
@@ -590,5 +604,18 @@ public class Library {
             e.printStackTrace();
         }
     }
+
+    public ArrayList<Book> getBooks() {
+        return books;
+    }
+
+    public ArrayList<Movie> getMovies(){
+        return movies;
+    }
+//    public String[][] getDateB() {
+//        String[][] data;
+//
+//
+//    }
 
 }

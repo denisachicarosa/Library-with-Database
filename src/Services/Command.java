@@ -336,7 +336,7 @@ public class Command {
     }
 
 
-    public void addToFile(String comName) {
+    public static void addToFile(String comName) {
         File log = new File(fileName);
         try {
             PrintWriter pw = new PrintWriter(new FileWriter(log, true));

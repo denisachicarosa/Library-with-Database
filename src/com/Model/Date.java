@@ -3,6 +3,7 @@ package com.Model;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+//import java.nio.HeapByteBuffer;
 
 
 public class Date {
@@ -10,6 +11,7 @@ public class Date {
     public Integer month;
     public Integer year;
     public String today;
+//    public HeapByteBuffer input;
 
     public Date addDays(int days) {
         Date returnDay = new Date();
@@ -36,6 +38,9 @@ public class Date {
         return returnDay;
     }
 
+    public Date(String dateString) {
+        strToDate(dateString);
+    }
     public void readData() {
         System.out.println("Here I am");
 

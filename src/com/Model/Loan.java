@@ -20,9 +20,6 @@ public class Loan implements FileAdd {
         this.returnDate = returnDate;
     }
 
-
-
-
     public ObjectLoaned getObject() {
         return object;
     }
@@ -32,7 +29,7 @@ public class Loan implements FileAdd {
     }
 
 
-    public Loan(Client client, Date loanDate, Date returnDate, ObjectLoaned object) {
+    public Loan() {
         this.client = client;
         this.loanDate = loanDate;
         this.returnDate = returnDate;
@@ -95,12 +92,13 @@ public class Loan implements FileAdd {
         returnDate = new Date();
         returnDate = loanDate.addDays(14);
     }
+
     private void setReturnDate() {
         returnDate = (Date) loanDate.addDays(14);
     }
 
-    public Loan() {
-        client = new Client();
+    public Loan(Client client, ObjectLoaned book) {
+        this.client = new Client();
         loanDate = new Date();
         returnDate = new Date();
 
@@ -126,6 +124,15 @@ public class Loan implements FileAdd {
             }
 
         }
+    }
+
+    public Loan(ObjectLoaned o, Client c, String dateString)
+    {
+        object = o;
+        client = c;
+
+        loanDate = new Date(dateString);
+        setReturnDate();
     }
 
     public void readData() {
