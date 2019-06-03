@@ -26,24 +26,24 @@ public class Main {
 //        l.printMovies();
 ////        l.printClients();
 //        l.printEmployees();
-//        Command c = new Command();
-////        c.start();
+        Command c = new Command();
+        c.start();
 
 
-        Library library = new Library();
-        ReadLibraryFromDatabase.readAll(library);
-        try {
-            library.updateObjects();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        AppMainForm appMainForm = new AppMainForm();
-
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                appMainForm.initFrameWithMenu(library);
-            }
-        });
+//        Library library = new Library();
+//        ReadLibraryFromDatabase.readAll(library);
+//        try {
+//            library.updateObjects();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        AppMainForm appMainForm = new AppMainForm();
+//
+//        SwingUtilities.invokeLater(new Runnable() {
+//            @Override
+//            public void run() {
+//                appMainForm.initFrameWithMenu(library);
+//            }
+//        });
     }
 }

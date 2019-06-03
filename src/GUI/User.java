@@ -31,6 +31,7 @@ public class User extends JFrame{
     private JButton doneButton;
     private JLabel loanPaperLabel;
     private JTextField insertLoanDateTextField;
+    private JButton switchToManagerModeButton;
 
     public User(Library l) {
 //        createUIComponents();
@@ -200,7 +201,12 @@ public class User extends JFrame{
 
         });
 
-
+        switchToManagerModeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame manager = new ManagerForm(l);
+            }
+        });
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setPreferredSize(new Dimension(1500 , 700));
@@ -231,4 +237,6 @@ public class User extends JFrame{
 //        setVisible(true);
 
     }
+
+
 }

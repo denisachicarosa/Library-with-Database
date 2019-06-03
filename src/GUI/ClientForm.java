@@ -15,6 +15,7 @@ public class ClientForm extends JFrame
     private JRadioButton listBooksRadioButton;
     private JScrollPane scrollPaneBooks;
     private JTable objects;
+    private JButton switchToManagerModeButton;
     private ButtonGroup buttonGroup ;
 
     private void completeTable(String object ) {
@@ -95,6 +96,7 @@ public class ClientForm extends JFrame
 
         buttonGroup.add(listBooksRadioButton);
         buttonGroup.add(listMoviesRadioButton);
+//        initFrameWithMenu(library);
 //        completeTable("books");
         add(listBooksRadioButton);
         add(listMoviesRadioButton);
@@ -102,4 +104,7 @@ public class ClientForm extends JFrame
         setVisible(true);
 
     }
+
+
+
 }

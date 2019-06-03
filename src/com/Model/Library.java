@@ -69,20 +69,24 @@ public class Library {
     public void addBook(Book b) {
         String s = "Add book";
         Command.addToFile(s);books.add(b);
+//        UpdateDatabase.addBook(b);
     }
 
     public void addBook() {
         Book b = new Book();
         b.readData();
         b.addToFile(inputFiles.getBookFile());
-        UpdateDatabase.addBook(b);
+//        UpdateDatabase.addBook(b);
         books.add(b);
 
     }
 
     public void addMovie(Movie m) {
         String s = "Add movie";
-        Command.addToFile(s); movies.add(m);}
+        Command.addToFile(s);
+        movies.add(m);
+//        UpdateDatabase.addMovie(m);
+    }
 
     public void addMovie() {
         Movie m = new Movie();
@@ -338,6 +342,7 @@ public class Library {
     public void addL(Loan l) {
         String s = "Add loan";
         Command.addToFile(s);
+//        UpdateDatabase.addLoan(l);
         loans.add(l);
     }
 
@@ -367,18 +372,23 @@ public class Library {
     }
 
     public  void addClient(Client c) {
+//        UpdateDatabase.addClient(c);
+        String s = "Add-client";
+        Command.addToFile(s);
         clients.add(c);
     }
 
     public void addEmployee(Employee e) {
         String s = "Add employee";
         Command.addToFile(s);
+//        UpdateDatabase.addEmployee(e);
         employees.add(e);
     }
 
     public void addClient(){
         Client c = new Client();
         c.readData();
+//        UpdateDatabase.addClient(c);
         c.addToFile(inputFiles.getClientFile());
         clients.add(c);
     }

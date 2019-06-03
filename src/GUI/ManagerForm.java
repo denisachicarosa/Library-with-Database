@@ -25,6 +25,7 @@ public class ManagerForm extends JFrame{
     private JRadioButton clientRadioButton;
     private JTextField textField;
     private JButton doneButton;
+    private JButton switchToClientModeButton;
     private ButtonGroup  buttonGroup;
     private ArrayList<String> textes = new ArrayList<>();
     static public int step = 0;
@@ -99,6 +100,13 @@ public class ManagerForm extends JFrame{
                 else if(added.equals("movie")) addMovie(l);
                 else if(added.equals("client")) addClient();
                 else if(added.equals("employee"))addEmployee();
+            }
+        });
+
+        switchToClientModeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame client = new User(l);
             }
         });
 

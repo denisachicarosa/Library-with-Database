@@ -146,7 +146,7 @@ public class UpdateDatabase {
         }
 
     }
-    public static void AddMovie(Movie m) {
+    public static void addMovie(Movie m) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             DatabaseConnection.connection = DriverManager.getConnection(DatabaseConnection.url,DatabaseConnection.userName,DatabaseConnection.password);

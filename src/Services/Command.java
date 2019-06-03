@@ -1,11 +1,13 @@
 package Services;
 
+import GUI.AppMainForm;
 import Persons.Client;
 import Persons.Employee;
 import com.Model.Book;
 import com.Model.Library;
 import com.Model.Loan;
 
+import javax.swing.*;
 import java.io.*;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -27,6 +29,7 @@ public class Command {
     public void printMenu(){
         System.out.println("------>  Menu  <------");
         System.out.println();
+        System.out.println("16. Use GUI");
         System.out.println("1. Get all the information about the library");
         System.out.println("2. Get the books in alphabetically order");
         System.out.println("3. Get all the clients");
@@ -64,6 +67,17 @@ public class Command {
 
             while (command != 0) {
                 switch (command) {
+                    case 16: {
+                        AppMainForm appMainForm = new AppMainForm();
+
+                        SwingUtilities.invokeLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                appMainForm.initFrameWithMenu(library);
+                            }
+                        });
+                        break;
+                    }
                     case 1: {
                         addToFile("Get-All");
                         library.printData();
@@ -195,6 +209,17 @@ public class Command {
 
             while (command != 0) {
                 switch (command) {
+                    case 16: {
+                        AppMainForm appMainForm = new AppMainForm();
+
+                        SwingUtilities.invokeLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                appMainForm.initFrameWithMenu(library);
+                            }
+                        });
+                        break;
+                    }
                     case 1: {
                         addToFile("Get-All");
                         library.printData();
